@@ -1,0 +1,70 @@
+$box-shadow-style: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+
+.home {
+    @import url('https://fonts.googleapis.com/css?family=Inconsolata');
+    
+    max-height: 100vh;
+    height: 100vh;
+
+    .title {
+        display: grid;
+        font-family: 'Inconsolata', monospace;
+        font-size: 2rem;
+        justify-content: center;
+        margin-top: 5rem;
+    }
+
+    .container{
+        display: grid;
+        grid-template-columns: 3fr 3fr 3fr 3fr;
+        grid-template-areas: 
+            "github twitter meetup email";
+        grid-gap: 1em;
+        width: 100%;
+        height: 50vh;
+
+        @media(max-width: 768px){
+            grid-template-rows: 1fr 1fr 5fr 1fr;
+        }
+
+        @media(max-width: 480px){
+            display: block;
+        }
+
+        github {
+            display: grid;
+            grid-area: github;
+            background-color: #24292e;
+            align-content: center;
+            justify-content: center;
+            box-shadow: $box-shadow-style;
+        }
+
+        twitter{
+            display: grid;
+            grid-area: twitter;
+            background-color: #1da1f2;
+            align-content: center;
+            justify-content: center;
+            box-shadow: $box-shadow-style;
+        }
+
+        meetup {
+            display: grid;
+            grid-area: meetup;
+            background-color: lightblue;
+            align-content: center;
+            justify-content: center;
+            box-shadow: $box-shadow-style;
+        }
+
+        email {
+            display: grid;
+            grid-area: email;
+            background-color: orange;
+            align-content: center;
+            justify-content: center;
+            box-shadow: $box-shadow-style;
+            }
+    }
+}
